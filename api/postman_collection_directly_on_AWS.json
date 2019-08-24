@@ -58,10 +58,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:1337/Invoice",
+					"raw": "http://18.217.38.120:1337/Invoice",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"18",
+						"217",
+						"38",
+						"120"
 					],
 					"port": "1337",
 					"path": [
