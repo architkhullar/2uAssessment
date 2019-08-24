@@ -8,6 +8,8 @@ Fork this repo and push the code to your new forked repo. Submit the forked repo
 ## User story 1
 As a vendor supplying services to 2ULaundry I need to submit invoices via an API in order to receive payment in a timely manner.
 
+- <span style="color: green"> Solution of this can be found in api folder and is live on http://18.217.38.120:1337/Invoice </span>
+
 ### Acceptance criteria
 1. The API accepts JSON formatted HTTP POST requests at the route '/Invoice'
 The following is a sample Invoice request that will be submitted to the API endpoint.
@@ -31,6 +33,7 @@ The following is a sample Invoice request that will be submitted to the API endp
 }
 ```
 3. Store the invoices in a data store of your choice with an additional property and value "status": "pending" 
+- <span style="color: blue"> Data Store chosen - MongoDb cloud. please ask me for the mongodb credential access if you need to see the entries in the database</span>
 
 ### Implementation
 Check folder **api** for implementation and instructions 
