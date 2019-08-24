@@ -43,7 +43,6 @@ io.on('connection', async function (socket) {
   /**
    * Websocket implemented to
    * create a invoice object
-   * generate random no.s as children based on No of Children
    * update db with new invoice
    * send back updated list
    */
@@ -64,9 +63,10 @@ io.on('connection', async function (socket) {
  
   /**
    * Websocket implemented to
-   * update lowwerlimit and or upper limit and or No of children of a invoice object
+   * update invoice.status  as "approve" of a invoice object
    * update db with new changes
-   * send back updated list
+   * send back updated list with only denied and pending status
+   * invoices with approved are removed from state
    */
   socket.on('update', (data, callback) => {
     Invoice.findById(data._id, (err, invoice) => {
@@ -93,7 +93,7 @@ io.on('connection', async function (socket) {
 
   /**
    * Websocket implemented to
-   * regenerate all children of a invoice object
+   * update invoice.status  as "deny" of a invoice object
    * update db with new children
    * send back updated list
    */

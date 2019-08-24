@@ -6,6 +6,9 @@ var invoice = mongoose.model('Invoice');
 
 // controller for creating the invoice
 exports.generateInvoice = function(req, res){
+
+    // TODO - validations for valid date and timeout and throw corresponding error
+    // TODO - validation for valid amount and throw corresponding error
     var newInvoice = new invoice(req.body);
     newInvoice.status = "pending";
     newInvoice.save(function(err, user) {

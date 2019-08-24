@@ -85,7 +85,7 @@ class App extends React.Component {
 
     // Create Socket
     this.socket = io(process.env.SOCKET_URL);
-
+   // show snackbar message on connection
     this.socket.on('connect', () => {
       this.setState({
         messageShow: true,
@@ -93,7 +93,7 @@ class App extends React.Component {
         messageVariant: 'success'
       });
     });
-
+    // show snackbar message on reconnection
     this.socket.on('reconnected', () => {
       this.setState({
         messageShow: true,
@@ -101,7 +101,7 @@ class App extends React.Component {
         messageVariant: 'success'
       });
     });
-
+    // show snackbar message on disconnection
     this.socket.on('disconnect', reason => {
       this.setState({
         messageShow: true,
@@ -109,7 +109,7 @@ class App extends React.Component {
         messageVariant: 'error'
       });
     });
-
+    // show list of invoices set them in state
     this.socket.on('list', invoices => {
       this.setState({
         invoices: {
@@ -118,7 +118,7 @@ class App extends React.Component {
         }
       })
     });
-
+    // in current list on invoices delete approved
     this.socket.on('delete', invoices => {
       if (Array.isArray(invoices)) {
         invoices.forEach(invoiceId => {
@@ -153,7 +153,7 @@ class App extends React.Component {
   }
 /**
  * 
- * Update invoice object
+ * Update invoice object for status approve
  */
   handleInvoiceApprove(event) {
     event.preventDefault();
@@ -171,7 +171,7 @@ class App extends React.Component {
   }
 
   /**
-   * Regenerate all children for a invoice object
+   * Update invoice object for deny status
    * Ask confirmation
    * Display error if any
    */
@@ -208,7 +208,7 @@ class App extends React.Component {
 
 
   /**
-   * Submit invoice objected created or updated
+   * Submit invoice objected created
    * Update db with changes using a websocket
    * Display error if any
    */
@@ -285,7 +285,7 @@ class App extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails id={invoice._id + '-content'}>
           
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h6" gutterBottom align="left">
             Invoice Number : {invoice.invoice_number} <br />
             Vendor Name : {invoice.vendor_name} <br />
             Vendor Address : {invoice.remittance_address} <br />

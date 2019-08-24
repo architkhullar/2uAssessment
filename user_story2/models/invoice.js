@@ -3,11 +3,13 @@ const schema = mongoose.Schema;
 /**
 * Invoice model to store Invoice details in mongodb
 * Invoice {
-* invoice String
-* upper Number
-* lower Number
-* noOfChildren Number
-* children[noOfChildren]
+* invoice_number String
+* total Number
+* currency String
+* invoice_date String
+* due_date String
+* vendor_name String
+* remittance_address String
 * }
 */
 const InvoiceSchema = new schema({
