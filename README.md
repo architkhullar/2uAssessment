@@ -33,6 +33,7 @@ The following is a sample Invoice request that will be submitted to the API endp
 3. Store the invoices in a data store of your choice with an additional property and value "status": "pending" 
 
 ### Implementation
+Check folder **api** for implementation and instructions 
 
 ## User story 2
 As a member of the 2ULaundry Accounting Team I need to see a list of invoices that have been submitted by vendors, but have not yet been approved for payment so that I can review and approve them.
@@ -47,3 +48,4 @@ As a member of the 2ULaundry Accounting Team I need to see a list of invoices th
 
 ### Implementation
 
+Check folder **userStory2** for implementation and instructions 
