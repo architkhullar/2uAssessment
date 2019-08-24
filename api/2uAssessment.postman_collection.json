@@ -1,0 +1,25 @@
+{
+	"info": {
+		"_postman_id": "3a956ce4-d707-49e7-84e3-c4c27625955a",
+		"name": "2uAssessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create an invoice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "SAMPLE:\nThe API accepts JSON formatted HTTP POST requests at the route '/Invoice' The following is a sample Invoice request that will be submitted to the API endpoint.\n{\n  \"invoice_number\": \"12345\",\n  \"total\": \"199.99\",\n  \"currency\": \"USD\",\n  \"invoice_date\": \"2019-08-17\",\n  \"due_date\": \"2019-09-17\",\n  \"vendor_name\": \"Acme Cleaners Inc.\",\n  \"remittance_address\": \"123 ABC St. Charlotte, NC 28209\"\n}"
+			},
+			"response": []
+		}
+	]
+}
