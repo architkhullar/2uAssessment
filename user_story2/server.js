@@ -30,6 +30,24 @@ mongoose.connect(process.env.MONGODB_URL, {
   }
 });
 
+
+// change stream for realtime updation when a new record is entered
+var connection = mongoose.connection;
+
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true
+}).then(db => {
+  const changeStream = connection.db.collection("invoices").watch([{$match:{"operationType":"insert"}}]);
+  changeStream.on("change", next => {
+  if(next.fullDocument.status == "pending" ){
+   var newInvoice = Invoice(next.fullDocument);
+   io.emit('list', {
+     [newInvoice._id]: newInvoice
+   });
+  }
+ });
+});
+
 io.on('connection', async function (socket) {
 
   // Send initial data
@@ -60,7 +78,7 @@ io.on('connection', async function (socket) {
       callback('done');
     });
   });
- 
+
   /**
    * Websocket implemented to
    * update invoice.status  as "approve" of a invoice object
@@ -83,7 +101,7 @@ io.on('connection', async function (socket) {
           callback('error');
           return;
         }
-        io.emit('delete', 
+        io.emit('delete',
           [invoice._id]
         );
         callback('done');
@@ -104,7 +122,7 @@ io.on('connection', async function (socket) {
         callback('error');
         return;
       }
-      
+
       invoice.status="deny";
       invoice.save().then(() => {
         io.emit('list', {
