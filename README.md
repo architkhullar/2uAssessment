@@ -8,7 +8,8 @@ Fork this repo and push the code to your new forked repo. Submit the forked repo
 ## User story 1
 As a vendor supplying services to 2ULaundry I need to submit invoices via an API in order to receive payment in a timely manner.
 
-- <span style="color: green"> Solution of this can be found in api folder and is live on http://18.217.38.120:1337/Invoice </span>
+### Implementation
+- Solution of this can be found in **api** folder and is live on http://18.217.38.120:1337/Invoice </span>
 
 ### Acceptance criteria
 1. The API accepts JSON formatted HTTP POST requests at the route '/Invoice'
@@ -33,7 +34,7 @@ The following is a sample Invoice request that will be submitted to the API endp
 }
 ```
 3. Store the invoices in a data store of your choice with an additional property and value "status": "pending" 
-- <span style="color: blue"> Data Store chosen - MongoDb cloud. please ask me for the mongodb credential access if you need to see the entries in the database</span>
+- Data Store chosen - MongoDb cloud. please ask me for the mongodb credential access if you need to see the entries in the database</span>
 
 ### Implementation
 Check folder **api** for implementation and instructions 
@@ -49,6 +50,9 @@ As a member of the 2ULaundry Accounting Team I need to see a list of invoices th
 4. When the user approves an invoice the "status" property for that invoice should be updated to "Approved"
 5. When an invoice is submitted via the API from user story #1, it should populate in the list of displayed invoices without requiring the user to manually refresh the list of invoices.
 
+
 ### Implementation
 
-Check folder **userStory2** for implementation and instructions 
+- Check folder **userStory2** for implementation and instructions and is live on http://18.217.38.120:8000/ 
+- The webpage displays all the pending and denied invoices. Approved invoices disappear. (point 1 states unapproved invoices - denied and pending)
+
