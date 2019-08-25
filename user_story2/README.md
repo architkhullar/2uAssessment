@@ -57,7 +57,7 @@ $ nodemon server.js
 
 * On denying an invoice a confirmation dialog box opens.
 
-![Create invoice button with validations] (https://github.com/architkhullar/2uAssessment/blob/master/user_story2/screenshots/Screen%20Shot%202019-08-24%20at%207.39.37%20PM.png)
+![Create invoice button with validations](https://github.com/architkhullar/2uAssessment/blob/master/user_story2/screenshots/Screen%20Shot%202019-08-24%20at%207.39.37%20PM.png)
 
 * When the page connects to the Clooud Db, it displays a snackbar like this:
 ![snackbar](https://github.com/architkhullar/2uAssessment/blob/master/user_story2/screenshots/Screen%20Shot%202019-08-24%20at%207.39.16%20PM.png)
